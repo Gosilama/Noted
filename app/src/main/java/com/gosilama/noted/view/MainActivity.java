@@ -1,7 +1,9 @@
-package com.gosilama.noted;
+package com.gosilama.noted.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.gosilama.noted.R;
 
 public class MainActivity extends AppCompatActivity {
 
