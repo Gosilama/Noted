@@ -14,7 +14,7 @@ import java.util.Date;
 public class Note {
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    @ColumnInfo(name = "note_id")
+    @ColumnInfo(name = "id")
     private int id;
 
     @ColumnInfo(name = "note_title")
@@ -33,4 +33,34 @@ public class Note {
     @ColumnInfo(name = "updated_at")
     @TypeConverters({TimestampConverter.class})
     private Date updatedAt;
+
+    public Note(@NonNull String noteTitle, @NonNull String noteContent, String userId) {
+        this.noteTitle = noteTitle;
+        this.noteContent = noteContent;
+        this.userId = userId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNoteTitle() {
+        return noteTitle;
+    }
+
+    public String getNoteContent() {
+        return noteContent;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
 }
