@@ -11,9 +11,12 @@ import com.gosilama.noted.model.Note;
 import java.util.List;
 
 @Dao
-public interface noteDao {
+public interface NoteDao {
     @Insert
     void insert(Note note);
+
+    @Query("SELECT * FROM notes LIMIT 1")
+    Note[] getAnyNote();
 
     @Query("SELECT * FROM notes ORDER BY note_title ASC")
     LiveData<List<Note>> getAllNotes();
