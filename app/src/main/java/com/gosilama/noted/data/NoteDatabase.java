@@ -9,7 +9,7 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 import com.gosilama.noted.dao.NoteDao;
-import com.gosilama.noted.lib.DummyNotes;
+import com.gosilama.noted.lib.Utils;
 import com.gosilama.noted.model.Note;
 
 import java.util.List;
@@ -46,7 +46,7 @@ public abstract class NoteDatabase extends RoomDatabase {
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
         private final NoteDao noteDao;
-        List<Note> dummyNotes = DummyNotes.getNotes();
+        List<Note> dummyNotes = Utils.getDummyNotes();
 
 
         PopulateDbAsync(NoteDatabase noteDatabase) {
