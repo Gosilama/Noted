@@ -7,6 +7,7 @@ import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.NonNull;
 
 import com.gosilama.noted.lib.TimestampConverter;
+import com.gosilama.noted.lib.Utils;
 
 import java.util.Date;
 
@@ -34,33 +35,45 @@ public class Note {
     @TypeConverters({TimestampConverter.class})
     private Date updatedAt;
 
-    public Note(@NonNull String noteTitle, @NonNull String noteContent, String userId) {
-        this.noteTitle = noteTitle;
-        this.noteContent = noteContent;
-        this.userId = userId;
-    }
-
-    public int getId() {
-        return id;
-    }
+    public Note() { }
 
     public String getNoteTitle() {
         return noteTitle;
+    }
+
+    public void setNoteTitle(String noteTitle) {
+        this.noteTitle = noteTitle;
     }
 
     public String getNoteContent() {
         return noteContent;
     }
 
+    public void setNoteContent(String noteContent) {
+        this.noteContent = noteContent;
+    }
+
     public String getUserId() {
         return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public Date getCreatedAt() {
         return createdAt;
     }
 
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public Date getUpdatedAt() {
         return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
